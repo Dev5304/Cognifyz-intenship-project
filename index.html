@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Webpage</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Welcome to My Website</h1>
+</header>
+
+
+<section>
+    <p>This is a simple webpage with a heading, paragraph, and image.</p>
+    <img src="cognifyz.jpeg" alt="Cognifyz">
+</section>
+
+<form action="#">
+    <input type="text" placeholder="Enter your text here">
+    <button type="submit">Submit</button>
+</form>
+
+<nav>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</nav>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const button = document.querySelector("button[type='submit']");
+        
+        button.addEventListener("click", function() {
+            button.style.backgroundColor = getRandomColor();
+        });
+        
+        function getRandomColor() {
+            const letters = "0123456789ABCDEF";
+            let color = "#";
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+    });
+
+    const currentTime = new Date().getHours();
+    let greeting;
+
+    if (currentTime < 12) {
+        greeting = "Good morning!";
+    } else if (currentTime < 18) {
+        greeting = "Good afternoon!";
+    } else {
+        greeting = "Good evening!";
+    }
+
+    alert(greeting);
+</script>
+
+</body>
+</html>
